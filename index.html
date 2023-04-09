@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="systemCalc.js" defer></script>
+</head>
+<body>
+    <div class="calc">
+        <div class="calc-head">
+            <p class="head-calc">9 x 9</p>
+            <p class="head-result">81</p>
+        </div>
+        <div class="calc-body">
+            <div class="calc-buttons-line">
+                <div class="calc-button green" onclick=erase()><span>AC</span></div>
+                <div class="calc-button cyan"><span class="pos-correction">( )</span></div>
+                <div class="calc-button cyan" onclick=writeOperation(1)><span class="pos-correction">%</span></div>
+                <div class="calc-button cyan" onclick=writeOperation(2)><span class="pos-correction">/</span></div>
+            </div>
+            <div class="calc-buttons-line">
+                <div class="calc-button" onclick=writeNum(7)><span>7</span></div>
+                <div class="calc-button" onclick=writeNum(8)><span>8</span></div>
+                <div class="calc-button" onclick=writeNum(9)><span>9</span></div>
+                <div class="calc-button cyan" onclick=writeOperation(3)><span class="pos-correction">x</span></div>
+            </div>
+            <div class="calc-buttons-line">
+                <div class="calc-button" onclick=writeNum(4)><span>4</span></div>
+                <div class="calc-button" onclick=writeNum(5)><span>5</span></div>
+                <div class="calc-button" onclick=writeNum(6)><span>6</span></div>
+                <div class="calc-button cyan" onclick=writeOperation(4)><span class="pos-correction">-</span></div>
+            </div>
+            <div class="calc-buttons-line">
+                <div class="calc-button" onclick=writeNum(1)><span>1</span></div>
+                <div class="calc-button" onclick=writeNum(2)><span>2</span></div>
+                <div class="calc-button" onclick=writeNum(3)><span>3</span></div>
+                <div class="calc-button cyan" onclick=writeOperation(5)><span class="pos-correction">+</span></div>
+            </div>
+            <div class="calc-buttons-line">
+                <div class="calc-button" onclick=writeNum(0)><span>0</span></div>
+                <div class="calc-button" onclick=writeOperation(6)><span class="pos-correction">.</span></div>
+                <div class="calc-button"><span>C</span></div>
+                <div class="calc-button blue"><span class="pos-correction">=</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
