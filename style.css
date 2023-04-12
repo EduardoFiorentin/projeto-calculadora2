@@ -8,7 +8,6 @@
     width: 300px;
     height: 500px;
     margin: 50px auto;
-    /* border: 1px solid #000; */
     border-radius: 10px;
     background-color: #1f1b1b;
     user-select: none;
@@ -32,6 +31,8 @@
 }
 .head-calc, .head-result {
     height: 40%;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .calc-body {
@@ -72,4 +73,11 @@
 }
 .pos-correction {
     transform: translatey(-13%);
+}
+
+.disable {
+    color: rgb(77, 77, 77);
+    background-color: rgb(137, 136, 136);
+    cursor: auto;
+    pointer-events: none;
 }

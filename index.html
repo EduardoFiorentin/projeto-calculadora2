@@ -18,8 +18,8 @@
         <div class="calc-body">
             <div class="calc-buttons-line">
                 <div class="calc-button green" onclick=erase()><span>AC</span></div>
-                <div class="calc-button cyan"><span class="pos-correction">( )</span></div>
-                <div class="calc-button cyan" onclick=writeOperation(1)><span class="pos-correction">%</span></div>
+                <div class="calc-button cyan disable"><span class="pos-correction">( )</span></div>
+                <div class="calc-button cyan disable" onclick=writeOperation(1)><span class="pos-correction">%</span></div>
                 <div class="calc-button cyan" onclick=writeOperation(2)><span class="pos-correction">/</span></div>
             </div>
             <div class="calc-buttons-line">
@@ -43,8 +43,8 @@
             <div class="calc-buttons-line">
                 <div class="calc-button" onclick=writeNum(0)><span>0</span></div>
                 <div class="calc-button" onclick=writeOperation(6)><span class="pos-correction">.</span></div>
-                <div class="calc-button"><span>C</span></div>
-                <div class="calc-button blue"><span class="pos-correction">=</span></div>
+                <div class="calc-button" onclick="eraseLast()"><span>C</span></div>
+                <div class="calc-button blue" onclick="equals()"><span class="pos-correction">=</span></div>
             </div>
         </div>
     </div>
