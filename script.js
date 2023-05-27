@@ -60,19 +60,32 @@ const filter = () => {
 
     // verificar se há duas operações seguidas (erro)
     if (/[+-x\/]\s\s[+x\/]/gi.test(calc[0].innerHTML)) {
-        result[0].innerHTML = "ERRO"
-        result[0].style.color = 'red'
+        setError("ERRO!")
         return false 
 
-    } else {
-        result[0].style.color = 'white'
-    }
+    } else removeError()
     
     // verifica se faltam espaços entre operações e numeros 
     calc[0].innerHTML = calc[0].innerHTML
         .replace(/([+x\/])(\d)/gi, "$1 $2")
 
+    // Verifica se faltam operações na conta 
+    const FORMAT_ERROR = /[)]\d/g.test(calc[0].innerHTML) ||
+                         /\d[(]/g.test(calc[0].innerHTML) 
+
+    console.log("formatação:", FORMAT_ERROR, calc[0].innerHTML)
+    FORMAT_ERROR ? setError("ERRO DE FORMATAÇÃO!") : null
+
+
     calculate()
+}
+
+const setError = msg => {
+    result[0].innerHTML = msg
+    result[0].style.color = 'red'
+}
+const removeError = () => {
+    result[0].style.color = 'white'
 }
 
 const calculate = () => {
@@ -114,3 +127,32 @@ const equals = () => {
 const calc_is_complete = calc => {
     return (/^[-\d\.]+$/gi.test(calc))
 }
+
+
+
+// FUNÇÃO INCOMPLETA...
+// regras parenteses 
+// ABRIR: 
+    // Se não houver parenteses 
+    // Se o digito anterior for uma operação ou abre parenteses 
+    // se 
+    
+// FECHAR
+    // Se o digito anterior é um número 
+    // 
+    
+const brackets = () => {
+    // true se não há parenteses na conta 
+    const NO_BRACKS = !/[()]/g.test(calc[0].innerHTML)
+
+    //true se a conta atual termina com "("
+    const END_BRACKS = /[(]$/g.test(calc[0].innerHTML)
+
+    // console.log(END_BRACKS)
+
+    // Verifica se é um abre parenteses
+    if (NO_BRACKS || END_BRACKS) calc[0].innerHTML += "("
+    else if (true) calc[0].innerHTML += ")"
+
+    filter() 
+}  
